@@ -82,9 +82,67 @@ DATABASES = {
         'USER': 'tavleen',
         'PASSWORD': 'result',
         'HOST': 'localhost',
-        # 'PORT': '3306'
     }
 }
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'formatters': {
+        'simple': {
+            'format': '[%(asctime)s] %(levelname)s %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+        'verbose': {
+            'format': '[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'development_logfile': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'formatter': 'verbose',
+            'filename': os.path.join(BASE_DIR, 'result/resultapp.log'),
+            'class': 'logging.FileHandler'
+        }
+    },
+    'root': {
+        'level': 'DEBUG',
+        'handlers': ['console'],
+    },
+    'loggers': {
+        'ResultApp': {
+            'handlers': ['development_logfile'],
+         },
+        'django': {
+            'handlers': ['development_logfile', 'console'],
+        },
+        'py.warnings': {
+            'handlers': ['console'],
+        },
+        'django.request' : {
+            'handlers': ['development_logfile'],
+            'level': 'DEBUG',  # change debug level as appropiate
+            'propagate': False,
+        }
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

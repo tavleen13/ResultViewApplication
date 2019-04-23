@@ -1,3 +1,6 @@
+__author__ = "Tavleen Kaur"
+__email__ = "tavleen.k13@gmail.com"
+
 from django.db import models
 import logging
 

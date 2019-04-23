@@ -1,0 +1,3 @@
+[2019-04-23 05:16:20] INFO [django.utils.autoreload.run_with_reloader:578] Watching for file changes with StatReloader
+[2019-04-23 05:16:25] WARNING [django.request.log_response:228] Bad Request: /app/check/result/
+[2019-04-23 05:16:25] WARNING [django.server.log_message:154] "POST /app/check/result/ HTTP/1.1" 400 16
