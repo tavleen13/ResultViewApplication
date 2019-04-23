@@ -33,7 +33,8 @@ Create your database and connect to it.
 ``` $ \c <db_name> ```
 
 You can also login to postgres shell by running
-``` $ psql -d <db_name> -U <username>
+``` $ psql -d <db_name> -U <username> ```
+
 
 ## Getting Started
 
