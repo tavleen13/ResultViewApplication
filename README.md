@@ -38,8 +38,8 @@ You can also login to postgres shell by running
 
 ## Getting Started
 
-Clone the repository in your workspace. This will setup the project in your system.
-``` $ git clone https://github.com/tavleen13/ViewYourResult.git ```
+Install python3. Check https://docs.python-guide.org/starting/install3/linux/ for help in case of Linux.
+A little bit of Google and same links for MacOS and Windows can be easily spotted.
 
 
 
